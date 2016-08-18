@@ -1,17 +1,18 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-var styles = require('../styles');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
-var UserDetailsWrapper = require('./UserDetailsWrapper');
-var UserDetails = require('./UserDetails');
-var MainContainer = require('./MainContainer');
-var Loading = require('./Loading');
+var React = require('react')
+var PropTypes = React.PropTypes
+var styles = require('../styles')
+var ReactRouter = require('react-router')
+var Link = ReactRouter.Link
+var UserDetailsWrapper = require('./UserDetailsWrapper')
+var UserDetails = require('./UserDetails')
+var MainContainer = require('./MainContainer')
+var Loading = require('./Loading')
 
 function ConfirmBattle (props) {
   return props.isLoading === true
     ? <Loading />
-    : <MainContainer>
+    : (
+      <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
           <UserDetailsWrapper header='Player 1'>
@@ -31,13 +32,13 @@ function ConfirmBattle (props) {
             </Link>
           </div>
         </div>
-      </MainContainer>
+      </MainContainer>)
 }
 
 ConfirmBattle.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   onInitiateBattle: PropTypes.func.isRequired,
-  playersInfo: PropTypes.array.isRequired,
+  playersInfo: PropTypes.array.isRequired
 }
 
-module.exports = ConfirmBattle;
+module.exports = ConfirmBattle

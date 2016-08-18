@@ -1,5 +1,5 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+var React = require('react')
+var PropTypes = React.PropTypes
 
 var styles = {
   container: {
@@ -14,7 +14,7 @@ var styles = {
     textAlign: 'center',
     position: 'absolute',
     width: '100%',
-    marginTop: '30px',
+    marginTop: '30px'
   }
 }
 
@@ -30,7 +30,7 @@ var Loading = React.createClass({
     }
   },
   getInitialState: function () {
-    this.originalText = this.props.text;
+    this.originalText = this.props.text
     return {
       text: this.originalText
     }
