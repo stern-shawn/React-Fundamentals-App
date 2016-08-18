@@ -40,7 +40,6 @@ var ConfirmBattleContainer = React.createClass({
   handleInitiateBattle: function () {
     this.context.router.push({
       pathname: '/results',
-      // this lets us push the playersInfo data through to the route
       state: {
         playersInfo: this.state.playersInfo
       }
@@ -51,7 +50,7 @@ var ConfirmBattleContainer = React.createClass({
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
-        onInitiaiteBattle={this.state.handleInitiateBattle}
+        onInitiateBattle={this.handleInitiateBattle}
         playersInfo={this.state.playersInfo}
       />
     )
