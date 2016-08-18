@@ -1,5 +1,5 @@
-var React = require('react')
-var styles = require('../styles')
+var React = require('react');
+var styles = require('../styles');
 
 function MainContainer (props) {
   return (
@@ -9,4 +9,4 @@ function MainContainer (props) {
   )
 }
 
-module.export = MainContainer
+module.exports = MainContainer;

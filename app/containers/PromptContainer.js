@@ -1,6 +1,5 @@
-var React = require('react')
-// var transparentBg = require('../styles/').transparentBg
-var Prompt = require('../components/Prompt')
+var React = require('react');
+var Prompt = require('../components/Prompt');
 
 var PromptContainer = React.createClass({
   contextTypes: {
@@ -11,38 +10,31 @@ var PromptContainer = React.createClass({
       username: ''
     }
   },
-  handleUpdateUser: function (e) {
-    this.setState({
-      username: e.target.value
-    })
-  },
   handleSubmitUser: function (e) {
-    e.preventDefault()
-    // This var is never used, what's the point?
-    // var username = this.state.username
-    // This line clears the text in the form field, making it set to placeholder
+    e.preventDefault();
+    var username = this.state.username;
     this.setState({
       username: ''
-    })
+    });
 
     if (this.props.routeParams.playerOne) {
-      // go to /battle page
-      console.log(this.context)
       this.context.router.push({
         pathname: '/battle',
         query: {
           playerOne: this.props.routeParams.playerOne,
-          playerTwo: this.state.username
+          playerTwo: this.state.username,
         }
       })
     } else {
-      // goto /playerTwo page
-      console.log(this.context)
       this.context.router.push('/playerTwo/' + this.state.username)
     }
   },
+  handleUpdateUser: function (event) {
+    this.setState({
+      username: event.target.value
+    });
+  },
   render: function () {
-    // console.log(this)
     return (
       <Prompt
         onSubmitUser={this.handleSubmitUser}
@@ -51,6 +43,6 @@ var PromptContainer = React.createClass({
         username={this.state.username} />
     )
   }
-})
+});
 
-module.exports = PromptContainer
+module.exports = PromptContainer;

@@ -3,8 +3,8 @@ var styles = {
     background: 'transparent'
   },
   space: {
-    margin: '25px'
+    marginTop: '25px',
   }
 }
 
-module.exports = styles
+module.exports = styles;
